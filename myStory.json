@@ -1,0 +1,113 @@
+{
+    "Title": "Escape",
+    "Credits": "Created by Ray Zhang (rzhan128@ucsc.edu).",
+    "InitialLocation": "basement",
+    "Locations": {
+        "basement": {
+            "Body": "Now you are awake, you feel that your dream is not fully awakened. The situation is that you have been kidnapped and trapped in the basement. You can help yourself escape by checking what's around you.",
+            "Choices": [
+                {
+                    "Text": "Check if the door can be opened.",
+                    "Target": "basement door"
+                },
+                {
+                    "Text": "Check the rug for the key to the basement door.",
+                    "Target": "rug"
+                },
+                {
+                    "Text": "Check the small window in the basement that look out to the backyard.",
+                    "Target": "window"
+                }
+                
+            ]
+        },
+        "basement door": {
+            "Body": "You examine the basement door, and you find it so strong that you need a key to open it.",
+            "Choices": [
+                {
+                    "Text": "Walk back to check the basement.",
+                    "Target": "basement"
+                },
+                {
+                    "Text": "Using key to go up into the hallway.",
+                    "Target": "hallway",
+                    "RequiresItem": "key"
+                }
+            ]
+        },
+        "rug": {
+            "Body": "You lift the rug, you don't find the key. But you find a pocket knife. You can take the knife with you.",
+            "Choices": [
+                {
+                    "Text": "Walk back to check the basement.",
+                    "Target": "basement",
+                    "Items": "knife"
+                }
+            ]
+        },
+        "window": {
+            "Body": "Checking the window. This window doesn't look very strong you could break it. And you see a small box outside the window.",
+            "Choices": [
+                {
+                    "Text": "Walk back to check the basement.",
+                    "Target": "basement"
+                },
+                {
+                    "Text": "Smashed windows with bare hands.",
+                    "Target": "bleed end"
+                },
+                {
+                    "Text": "Stabbed the window with a knife.",
+                    "Target": "box",
+                    "RequiresItem": "knife"
+                }
+            ]
+        },
+        "bleed end": {
+            "Body": "You managed to smash the window with your hands, but shards of glass bounced on you. You bleed to death."
+        },
+        "box": {
+            "Body": "You find a key in the box.",
+            "Choices": [
+                {
+                    "Text": "Take the key and back to the basement door.",
+                    "Target": "basement door",
+                    "Items": "key"
+                }
+            ]
+        },
+        "hallway": {
+            "Body": "Walking out of the basement, you see a sleeping dog in the living room. The dog is vicious, You can choose to kill it when it sleep, or sneak up to the front door and escape.",
+            "Choices": [
+                {
+                    "Text": "Kill the dog when it sleep.",
+                    "Target": "bad end"
+                },
+                {
+                    "Text": "Escape quietly.",
+                    "Target": "dog awake"
+                }
+            ]
+        },
+        "bad end": {
+            "Body": "When you were about to hit it with a knife, it dodge. It attacks you like flash. You are bitten to death."
+        },
+        "dog awake": {
+            "Body": "It wakes up when you approach the door, and it stares at you fiercely.",
+            "Choices": [
+                {
+                    "Text": "Kill the dog with your knife.",
+                    "Target": "bad end"
+                },
+                {
+                    "Text": "Slowly retreat to the door and then quickly slip away.",
+                    "Target": "escape"
+                }
+            ]
+        },
+        "escape": {
+            "Body": "You slowly walked to the door, and quickly completed the actions of opening the door, escaping, and closing the door. You escaped successfully."
+        }
+
+    }
+}
